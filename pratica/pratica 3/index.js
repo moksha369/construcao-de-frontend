@@ -4,7 +4,7 @@
     const main = document.createElement("main");
     elementos.forEach((elemento) => main.append(elemento));
     return main;
-  }
+}
 
   function Rodape(texto){
     const paragrafo = document.createElement("p");
@@ -12,20 +12,20 @@
     const footer = document.createElement("footer");
     footer.append(paragrafo);
     return footer;
-  }
+}
 
   function Titulo(texto){
     const h1 = document.createElement("h1");
     h1.innerText = texto;
     return h1;
-  }
+}
   
   function Icone(origem, texto){
     const img = document.createElement("img");
     img.setAttribute("src", origem);
     img.setAttribute("alt", texto);
     return img;
-  }
+}
 
   function Input(id, tipo, rotulo){
     const label = document.createElement("label");
@@ -38,26 +38,26 @@
     const div = document.createElement("div");
     div.append(label, input);
     return div;
-  }
+}
 
   function InputSubmit(valor){
     const input = document.createElement("input");
     input.setAttribute("type", "submit");
     input.setAttribute("value", valor);
     return input;
-  }
+}
 
   function Link(rota, texto){
     const a = document.createElement("a");
     a.setAttribute("href", rota);
     a.innerText = texto;
     return a;
-  }
+} 
   
   function onLogin(event){
     event.preventDefault();
     Navega("/home");
- }
+} 
 
   function FormLogin(){
     const form = document.createElement("form");
@@ -69,7 +69,7 @@
     form.append(inputEmail, inputSenha, inputEntrar);
     form.addEventListener("submit", onLogin);
     return form;
-  }
+}
   
   function PageLogin(){
     const logo = Icone("https://www.svgrepo.com/show/411955/learn.svg", "Logo da Aplicação");
@@ -80,7 +80,7 @@
     const rodape = Rodape("Copyright (C) 2024");
     root.append(conteudo, rodape);
     document.title = "Login - Aluno Online";
-  }
+}
 
   function Navega(rota){
     root.innerHTML = null;
@@ -92,8 +92,8 @@
       PagePerfil();
     } else {
       root.innerHTML = "<p>Página não encontrada!</p>";
-    }
   }
+}
   
   Navega("/login");
 
@@ -102,7 +102,7 @@
     input.setAttribute("type", "search");
     input.setAttribute("placeholder", "Pesquisar...");
     return input;
-  }
+} 
   
   function Cabecalho() {
     const logo = Icone(
@@ -122,14 +122,14 @@
     const header = document.createElement("header");
     header.append(grupo1, grupo2);
     return header;
-  }
+}
   
   function onClickMenu(event){
     event.preventDefault();
     Navega(event.target.getAttribute("href"));
- }
+} 
  
- function Menu() {
+  function Menu() {
     const opcoes = [
       { rota: "/home", titulo: "Home" },
       { rota: "/perfil", titulo: "Perfil" },
@@ -146,14 +146,14 @@
     const nav = document.createElement("nav");
     nav.append(lista);
     return nav;
-  }
+} 
   
   function Subtitulo(texto){
     const h2 = document.createElement("h2");
     h2.innerText = texto;
     return h2;
-  }
-
+}
+  
   function Painel(nome) {
     const titulo = document.createElement("h3");
     titulo.innerText = nome;
@@ -161,14 +161,14 @@
     const painel = document.createElement("article");
     painel.append(titulo, lista);
     return painel;
-  }
+} 
   
   function Secao(nome, conteudo) {
     const titulo = Subtitulo(nome);
     const section = document.createElement("section");
     section.append(titulo, conteudo);
     return section;
-  }
+}
   
   function PageHome() {
     const menu = Menu();
@@ -185,15 +185,15 @@
     const cabecalho = Cabecalho();
     root.append(cabecalho, conteudo);
     document.title = "Home - Aluno Online";
-  }
+}
   
   
-function onSalvar(event){
+  function onSalvar(event){
     event.preventDefault();
     Navega("/perfil");
- }
+}
  
- function FormPerfil() {
+  function FormPerfil() {
     const form = document.createElement("form");
     form.setAttribute("action", "/perfil");
     form.setAttribute("method", "post");
@@ -204,7 +204,7 @@ function onSalvar(event){
     form.append(inputNome, inputEmail, inputSenha, inputSalvar);
     form.addEventListener("submit", onSalvar);
     return form;
-  }
+}
   
   function PagePerfil() {
     const menu = Menu();
