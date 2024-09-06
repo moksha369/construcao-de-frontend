@@ -4,20 +4,21 @@ import Link from '../components/Link';
 import Logo from '../components/Logo';
 import Rodape from '../components/Rodape'
 import Titulo from '../components/Titulo';
-import BotaoEntrar from '../components/BotaoEntrar';
+import BotaoEntrar from '../components/Botao';
+import Conteudo from '../components/Conteudo';
 
 
 function Login() {
     return (
         <>
-            <main>
-                <Logo />
-                <Titulo />
+            <Conteudo>
+                <Logo imagem="https://www.svgrepo.com/show/520490/student.svg" texto="Logo da aplicação"/>
+                <Titulo texto="Aluno Online"/>
                 <InputEmail />
                 <InputSenha />
-                <BotaoEntrar />
-                <Link />
-            </main>
+                <BotaoEntrar texto="Entrar" />
+                <Link texto="Esqueceu a Senha?"/>
+            </Conteudo>
             <Rodape />
         </>
     );
