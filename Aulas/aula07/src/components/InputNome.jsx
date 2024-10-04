@@ -1,5 +1,5 @@
 function InputNome(props) {
-    const regra = {
+    const regras = {
         required: { value: true, message:"Nome é obrigatório"},
         maxLength: { 
             value: 100,
