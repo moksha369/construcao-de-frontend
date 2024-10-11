@@ -8,7 +8,7 @@ function Menu() {
              <NavLink to="/home">Home</NavLink>
             </li>
             <li>
-             <NavLink to="/perfil/1">Perfil</NavLink>
+             <NavLink to="/perfil">Perfil</NavLink>
             </li>
             <li>
              <NavLink to="/">Sair</NavLink>
