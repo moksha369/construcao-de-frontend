@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { TarefaContext } from "../contexts/TarefaContext";
 
 function ListTarefa() {
-  const { tarefas, remover } = useContext(TarefaContext);
+  const { tarefas, remover, carregar } = useContext(TarefaContext);
+
+  useEffect(() => {
+    carregar();
+  },[])
 
   return (
     <ul>
