@@ -19,7 +19,7 @@ function TarefaProvider(props) {
     })
     .then((response) => response.json())
     .then((data) => setTarefas([...tarefas, data]))
-    .catch((error) => console.log("Deu ruim"));
+    .catch((error) => console.log("Deu ruim"));c
   };
 
   const remover = (tarefa) => {
