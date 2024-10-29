@@ -15,7 +15,11 @@ function buscarTodos(){
 }
 
 function buscar(id) {
-
+  return axios.get(`${url}/${id}`)
+  .then((response) => { return {sucesso: true, dados: response.data};
+})
+  .catch((error) => { return { sucesso: false, mensagem: error.message};
+  });
 }
 
 function adicionar(contato) {
@@ -27,7 +31,16 @@ function adicionar(contato) {
 
 
 function atualizar(contato) {
-
+  return axios.put(`${url}/${contato.id}`, {
+    nome: contato.nome,
+    telefone: contato.telefone,
+  })
+  .then((response) => {
+    return { sucesso: true, dados: response.data };
+  })
+  .catch((error) => {
+    return { sucesso: false, mensagem: error.mensagem };
+  });
 }
 
 function remover(id) {
@@ -41,4 +54,4 @@ function remover(id) {
   })
 }
 
-export {buscarTodos, buscar, adicionar, atualizar, remover}
+export {buscarTodos, buscar, adicionar, atualizar, remover};

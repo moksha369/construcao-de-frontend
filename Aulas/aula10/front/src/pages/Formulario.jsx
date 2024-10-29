@@ -7,14 +7,14 @@ function Formulario(props) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ values: props.dados });
 
   return (
-  <form onSubmit={handleSubmit(props.trataEnviar)}>
-    <InputNome register={register} error={errors.nome} />
-    <InputTelefone register={register} error={errors.telefone} />
-    <button type="submit">Salvar</button>
-  </form>
+    <form onSubmit={handleSubmit(props.trataEnviar)}>
+      <InputNome register={register} error={errors.nome} />
+      <InputTelefone register={register} error={errors.telefone} />
+      <button type="submit">Salvar</button>
+    </form>
   );
 }
 
