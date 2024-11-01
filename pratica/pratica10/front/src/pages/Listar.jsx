@@ -1,6 +1,6 @@
 import { useEffect, useState, useNavigate } from "react";
 import { buscarTodos, Remover } from "../services/ContatoService";
-import { Listagem } from "../pages/Listagem";
+import Listagem from "../pages/Listagem";
 
 function Listar() {
   const [contatos, setContatos] = useState([]);
