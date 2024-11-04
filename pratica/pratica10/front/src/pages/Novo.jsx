@@ -10,10 +10,22 @@ function Novo(){
     const navigate = useNavigate();
     const trataEnviar = (data) => {
         const resposta = adicionar (data); 
+     if (resposta.sucesso) {
+        navigate("/");
+    } else {
+        setErro(resposta.mensagem);
     }
-    return (
-        <></>
-    );
 }
+    return (
+        <>
+            <Cabecalho />
+            <Conteudo>
+                <h2>Novo Contato</h2>
+                <Formulario trataEnviar={trataEnviar} valores={{}} />
+                {erro && <p>{erro}</p>}
+            </Conteudo>
+        </>
+    );
+ }
 
 export default Novo;
