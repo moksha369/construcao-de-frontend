@@ -16,8 +16,12 @@ function AuthProvider(props) {
         logado: true,
         token: "1a2b3c4d",
       });
+      return "";
+    } else {
+      return "Login invalido";
     }
   };
+
   const logout = () => {
     setUsuario({
       email: null,
