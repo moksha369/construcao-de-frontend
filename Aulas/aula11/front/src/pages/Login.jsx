@@ -2,6 +2,8 @@ import { useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import Formulario from "./Formulario";
+import Registrar from "./Registrar";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ function Login() {
   const { login } = useContext(AuthContext);
 
   const onEntrar = (data) => {
-    login(data);
+    const erro = login(data);
     if (!erro) {
       setMsg("");
       navigate("/home");
@@ -23,7 +25,7 @@ function Login() {
   return (
     <>
       <h1>Login</h1>
-      {msg}
+      {msg && <p>{msg}</p>}
       <Formulario onEnviar={onEntrar} texto="Entrar" />
         <Link to="/registrar">Registrar</Link>
     </>
