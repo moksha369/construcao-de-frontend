@@ -1,0 +1,30 @@
+function Listagem(props) {
+  return (
+    <ul>
+      <li>
+        <span>Nome</span>
+        <span>Telefone</span>
+        <span>Ações</span>
+      </li>
+      {props.itens.map(
+        (contato, index)(
+          <li key={index}>
+            <span>{contato.nome}</span>
+            <span>{contato.telefone}</span>
+            <span>
+              <button onClick={(e) => props.trataAtualizar(contato.id)}>
+                Atualizar
+              </button>
+              <buton onClick={(e) => props.trataRemover(contao.id)}>
+                Remover
+              </buton>
+            </span>
+          </li>
+        )
+      )}
+      ;
+    </ul>
+  );
+}
+
+export default Listagem;
