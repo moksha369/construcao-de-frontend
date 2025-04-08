@@ -7,7 +7,7 @@ function TaskProvider({ children }) {
   const adicionar = (nomeTarefa) => {};
   setTarefas([
     ...tarefas,
-    { id: Date.now(), nome: nomeTarefa, concluida: false },
+    { id: Date.now(), nome: nomeTarefa, concluida: false }
   ]);
   const concluir = (idTarefa) => {
     setTarefas(
